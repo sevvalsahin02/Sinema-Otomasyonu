@@ -93,13 +93,13 @@ namespace Sinema_Otomasyonu
             MailMessage message = new MailMessage();
 
 
-            client.Credentials = new NetworkCredential("sinema.otomasyonu01@gmail.com", "sinema07.");
+            client.Credentials = new NetworkCredential("mail", "sifre");
             client.Port = 587;
             client.Host = "smtp-mail.outlook.com"; //smtp.gmail.com
             client.EnableSsl = true;
 
             message.To.Add(Form11.e_mail);
-            message.From = new MailAddress("sinema.otomasyonu01@gmail.com", "Sinema Otomasyonu");
+            message.From = new MailAddress("mail", "Sinema Otomasyonu");
             message.Subject = "Doğrulama Kodu";
             message.Body = "Senin doğrulama kodun="+rand_code;
             client.Send(message);
